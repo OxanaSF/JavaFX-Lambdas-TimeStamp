@@ -9,6 +9,7 @@ import javafx.scene.shape.*;
 import javafx.scene.text.*;
 import javafx.stage.*;
 import javafx.event.ActionEvent;
+
 import java.time.*;
 import java.time.format.DateTimeFormatter;
 
@@ -142,9 +143,8 @@ public class LineInfoGUI extends Application {
             pane.getChildren().add(line);
 
             LocalDateTime timeNow = LocalDateTime.now();
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("h:mm a");
-            timeText.setText("Time stamp: " + timeNow.format(formatter));
-
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM d 'at' h:mm:ss a");
+            timeText.setText("Line created on: " + timeNow.format(formatter));
 
 
         } else { // startPoint != null && endPoint !=null
